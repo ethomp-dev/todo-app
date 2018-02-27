@@ -1,0 +1,192 @@
+@primary: #2196f3;
+@green: #37c5ab;
+@yellow: #eec300;
+@red: #e8384f;
+
+@font-face {
+    font-family: CircularStd;
+    src: url('font/CircularStd-Book.otf');
+}
+
+@font-face {
+    font-family: CircularStd;
+    src: url('font/CircularStd-Bold.otf');
+    font-weight: bold;
+}
+
+body {
+    font-family: 'CircularStd', sans-serif;
+    background-color: #F8F9FA;
+ 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+ 
+    padding: 0;
+    margin: 0;
+ 
+    font-size: 14px;
+}
+ 
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100%;
+}
+ 
+header {
+    padding: 20px 15px 15px 15px;
+    position: relative;
+}
+ 
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 1em;
+}
+ 
+form {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    position: relative;
+}
+ 
+.new-task input {
+    box-sizing: border-box;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding-right: 80px;
+    font-size: 1em;
+}
+ 
+.new-task input:focus{
+    outline: 0;
+}
+ 
+ul {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+ 
+.delete {
+    float: right;
+    font-weight: bold;
+    background: none;
+    font-size: 1em;
+    border: none;
+    position: relative;
+}
+ 
+li {
+    position: relative;
+    list-style: none;
+    padding: 15px;
+    border-bottom: #eee solid 1px;
+}
+ 
+li .text {
+    margin-left: 10px;
+}
+
+.DayPickerInput input {
+    position: absolute;
+    top: 15px;
+    right: 7%;
+    padding: .5em 0;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+ 
+li.checked {
+    color: #888;
+}
+ 
+li.checked .text {
+    text-decoration: line-through;
+}
+ 
+li.private {
+    background: #eee;
+    border-color: #ddd;
+}
+ 
+header .hide-completed {
+    float: right;
+}
+ 
+.toggle-priority,
+.toggle-private {
+    margin-left: 5px;
+    box-shadow: none;
+    border: none;
+    border-radius: 50px;
+    padding: 1% 2.5%;
+    outline: none;
+}
+
+.toggle-priority.Low {
+    background: @green;
+    color: #fff;
+}
+
+.toggle-priority.Medium {
+    background: @yellow;
+    color: #fff;
+}
+
+.toggle-priority.High {
+    background: @red;
+    color: #fff;
+}
+
+.toggle-private {
+    background: #333;
+    color: #fff;
+}
+
+.DayPicker-Day {
+    border-radius: 0 !important;
+}
+
+.DayPicker-Day:hover {
+    border-radius: 0 !important;
+}
+
+.DayPicker-Day--today {
+    color: @primary !important;
+}
+
+.DayPicker-Day--selected {
+    background-color: @primary !important;
+    color: #fff !important;
+}
+
+.DayPicker-NavButton--prev {
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0OTIgNDkyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTIgNDkyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTE5OC42MDgsMjQ2LjEwNEwzODIuNjY0LDYyLjA0YzUuMDY4LTUuMDU2LDcuODU2LTExLjgxNiw3Ljg1Ni0xOS4wMjRjMC03LjIxMi0yLjc4OC0xMy45NjgtNy44NTYtMTkuMDMybC0xNi4xMjgtMTYuMTIgICAgQzM2MS40NzYsMi43OTIsMzU0LjcxMiwwLDM0Ny41MDQsMHMtMTMuOTY0LDIuNzkyLTE5LjAyOCw3Ljg2NEwxMDkuMzI4LDIyNy4wMDhjLTUuMDg0LDUuMDgtNy44NjgsMTEuODY4LTcuODQ4LDE5LjA4NCAgICBjLTAuMDIsNy4yNDgsMi43NiwxNC4wMjgsNy44NDgsMTkuMTEybDIxOC45NDQsMjE4LjkzMmM1LjA2NCw1LjA3MiwxMS44Miw3Ljg2NCwxOS4wMzIsNy44NjRjNy4yMDgsMCwxMy45NjQtMi43OTIsMTkuMDMyLTcuODY0ICAgIGwxNi4xMjQtMTYuMTJjMTAuNDkyLTEwLjQ5MiwxMC40OTItMjcuNTcyLDAtMzguMDZMMTk4LjYwOCwyNDYuMTA0eiIgZmlsbD0iI2FiYWJhYiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo) !important;
+}
+
+.DayPicker-NavButton--next {
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0OTIuMDA0IDQ5Mi4wMDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5Mi4wMDQgNDkyLjAwNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zODIuNjc4LDIyNi44MDRMMTYzLjczLDcuODZDMTU4LjY2NiwyLjc5MiwxNTEuOTA2LDAsMTQ0LjY5OCwwcy0xMy45NjgsMi43OTItMTkuMDMyLDcuODZsLTE2LjEyNCwxNi4xMiAgICBjLTEwLjQ5MiwxMC41MDQtMTAuNDkyLDI3LjU3NiwwLDM4LjA2NEwyOTMuMzk4LDI0NS45bC0xODQuMDYsMTg0LjA2Yy01LjA2NCw1LjA2OC03Ljg2LDExLjgyNC03Ljg2LDE5LjAyOCAgICBjMCw3LjIxMiwyLjc5NiwxMy45NjgsNy44NiwxOS4wNGwxNi4xMjQsMTYuMTE2YzUuMDY4LDUuMDY4LDExLjgyNCw3Ljg2LDE5LjAzMiw3Ljg2czEzLjk2OC0yLjc5MiwxOS4wMzItNy44NkwzODIuNjc4LDI2NSAgICBjNS4wNzYtNS4wODQsNy44NjQtMTEuODcyLDcuODQ4LTE5LjA4OEMzOTAuNTQyLDIzOC42NjgsMzg3Ljc1NCwyMzEuODg0LDM4Mi42NzgsMjI2LjgwNHoiIGZpbGw9IiNhYmFiYWIiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K) !important;
+}
+
+@media (max-width: 600px) {
+    li {
+        padding: 12px 15px;
+    }
+ 
+    .search {
+        width: 150px;
+        clear: both;
+    }
+ 
+    .new-task input {
+        padding-bottom: 5px;
+    }
+}
